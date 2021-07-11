@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script> 
+      window.$ = require("jquery");
+
+      require('./js/dict.js');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Uploading data</title>
+    <meta name="viewport" content="user-scalable=no,initial-scale = 1.0,maximum-scale = 1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/fonts/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/topcoat-desktop-dark.css">
+    <link rel='stylesheet' type='text/css' href='./assets/css/icomatic.css'>
+    <script type='text/javascript' src='./assets/js/icomatic.js'></script>
+
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/custom.css">
+
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+    <link rel="stylesheet" href="./assets/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="./assets/codemirror/theme/monokai.css">
+    <link rel="stylesheet" href="./assets/codemirror/addon/fold/foldgutter.css">
+  </head>
+  <body class="dark">
+    <div class="top-nav">
+      <ul class="topcoat-button-bar">
+        <!--
+        <li class="topcoat-button-bar__item dropdown-toggle">
+          <a href="#" class="topcoat-button-bar__button">File</a>
+          <ul class="top-menu dropdown-menu">
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button" id="open-settings">Settings</a>
+            </li>
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button" id="exit-app">Exit</a>
+            </li>
+          </ul>
+        </li>
+        -->
+      </ul>
+      <div class="grow"></div>
+      <ul class="icon-button-bar">
+        <li class="topcoat-icon-button" id="minimize-window">
+          <a href="#" class='icomatic icon topcoat-icon'>minus</a>
+        </li>
+        <!--
+        <li class="topcoat-icon-button" id="maximize-window">
+          <a href="#" class='icomatic icon topcoat-icon'>plus</a>
+        </li>-->
+        <li class="topcoat-icon-button" id="close-window">
+          <a href="#" class='icomatic icon topcoat-icon'>cancel</a>
+        </li>
+      </ul>
+    </div>
+    <div class="main-wrapper">
+        <div class="main">
+          <div class="up-set">
+            <div class="dirlist">
+            </div>
+            <div class="split-list">
+              <label class="topcoat-checkbox c-pointer mb-5" data-tippy-content="Erase the server directory before uploading">
+                <input type="checkbox" id="wipe">
+                <div class="topcoat-checkbox__checkmark"></div>
+                Wipe
+              </label>
+              <label class="topcoat-checkbox c-pointer mb-5" data-tippy-content="Generate auth.json for project installation">
+                <input type="checkbox" id="auth">
+                <div class="topcoat-checkbox__checkmark"></div>
+                Generate auth
+              </label>
+              <label class="topcoat-checkbox c-pointer mb-5" data-tippy-content="Generate the configuration file to allow automatic project installation">
+                <input type="checkbox" id="db">
+                <div class="topcoat-checkbox__checkmark"></div>
+                Generate config
+              </label>
+              <button class="topcoat-button ml-auto" id="upload" data-tippy-content="Upload the file to a selected server">Upload</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script> 
+      require('./js/translate.js');
+
+      require('./js/upload.js'); 
+    </script>
+  </body>
+</html>

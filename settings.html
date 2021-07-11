@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script> 
+      window.$ = require("jquery");
+
+      require('./js/dict.js');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Topcoat</title>
+    <meta name="viewport" content="user-scalable=no,initial-scale = 1.0,maximum-scale = 1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/fonts/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/topcoat-desktop-dark.css">
+    <link rel='stylesheet' type='text/css' href='./assets/css/icomatic.css'>
+    <script type='text/javascript' src='./assets/js/icomatic.js'></script>
+
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/custom.css">
+    
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+    <link rel="stylesheet" href="./assets/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="./assets/codemirror/theme/monokai.css">
+  </head>
+  <body class="dark">
+    <div class="top-nav">
+      <div class="grow"></div>
+      <ul class="icon-button-bar">
+        <li class="topcoat-icon-button" id="minimize-window">
+          <a href="#" class='icomatic icon topcoat-icon'>minus</a>
+        </li>
+        <li class="topcoat-icon-button" id="maximize-window">
+          <a href="#" class='icomatic icon topcoat-icon'>plus</a>
+        </li>
+        <li class="topcoat-icon-button" id="close-window">
+          <a href="#" class='icomatic icon topcoat-icon'>cancel</a>
+        </li>
+      </ul>
+    </div>
+    <div class="main-wrapper">
+      <div class="main">
+        <div class="tabset">
+          <div class="topcoat-tab-bar">
+            <label class="topcoat-tab-bar__item">
+              <button class="topcoat-tab-bar__button--selected tab-toggler" data-target="#tab1">Repo</button>
+            </label>
+            <label class="topcoat-tab-bar__item">
+              <button class="topcoat-tab-bar__button tab-toggler" data-target="#tab2">SSH</button>
+            </label>
+            <label class="topcoat-tab-bar__item">
+              <button class="topcoat-tab-bar__button tab-toggler" data-target="#tab3">Database</button>
+            </label>
+            <label class="topcoat-tab-bar__item">
+              <button class="topcoat-tab-bar__button tab-toggler" data-target="#tab4">Misc</button>
+            </label>
+            <!--
+            <label class="topcoat-tab-bar__item">
+              <button class="topcoat-tab-bar__button tab-toggler" data-target="#tab3">Security</button>
+            </label>-->
+            <div class="topcoat-tab-bar__filler"></div>
+          </div>
+          <div class="tabcontent">
+            <div class="tab-to-toggle d-block" id="tab1">
+              <div class="data-row">
+                <div class="data-item grow">
+                  <span class="data-item-desc">GitLab Token</span>
+                  <input type="text" class="topcoat-text-input" placeholder="GitLab Token" value="" id="glbtk">
+                </div>
+              </div>
+              <hr>
+              <div class="data-row">
+                <div class="data-item grow">
+                  <span class="data-item-desc">GitLab username</span>
+                  <input type="text" class="topcoat-text-input" placeholder="GitLab username" value="" id="gluser">
+                </div>
+                <div class="data-item grow">
+                  <span class="data-item-desc">GitLab password</span>
+                  <input type="password" class="topcoat-text-input" placeholder="GitLab password" value="" id="glpass">
+                </div>
+              </div>
+              <div class="data-row">
+                <div class="data-item grow">
+                  <span class="data-item-desc">SVN username</span>
+                  <input type="text" class="topcoat-text-input" placeholder="SVN username" value="" id="svnuser">
+                </div>
+                <div class="data-item grow">
+                  <span class="data-item-desc">SVN password</span>
+                  <input type="password" class="topcoat-text-input" placeholder="SVN password" value="" id="svnpass">
+                </div>
+              </div>
+              <hr>
+              <div class="data-row">
+                <div class="data-item grow">
+                  <span class="data-item-desc">Repository link</span>
+                  <input type="text" class="topcoat-text-input" placeholder="Repository link" value="http://svn.ukrtech.info/uticms/install/projects/" id="repolink">
+                </div>
+                <div class="data-item f-basis-30">
+                  <span class="data-item-desc">Composer source</span>
+                  <input type="text" class="topcoat-text-input" placeholder="Composer source" value="/contr" id="compsource">
+                </div>
+              </div>
+            </div>
+            <div class="tab-to-toggle" id="tab2">
+              <div class="data-row">
+                <div class="data-item grow">
+                  <span class="data-item-desc">SSH Host</span>
+                  <input type="text" class="topcoat-text-input" placeholder="SSH Host" value="" id="host">
+                </div>
+                <div class="data-item f-basis-30">
+                  <span class="data-item-desc">SSH Port</span>
+                  <input type="text" class="topcoat-text-input" placeholder="SSH Port" value="" id="port">
+                </div>
+              </div>
+              <div class="data-row">
+                <div class="data-item grow">
+                  <span class="data-item-desc">SSH username</span>
+                  <input type="text" class="topcoat-text-input" placeholder="Repo username" value="" id="sshuser">
+                </div>
+                <div class="data-item grow">
+                  <span class="data-item-desc">SSH password</span>
+                  <input type="password" class="topcoat-text-input" placeholder="Repo password" value="" id="sshpass">
+                </div>
+              </div>
+            </div>
+            <div class="tab-to-toggle" id="tab3">
+              <div class="data-row">
+                <div class="data-item grow">
+                  <span class="data-item-desc">Database host</span>
+                  <input type="text" class="topcoat-text-input" placeholder="Database host" value="144.76.114.56" id="dbhost">
+                </div>
+                <div class="data-item f-basis-30">
+                  <span class="data-item-desc">Path to PHP</span>
+                  <input type="text" class="topcoat-text-input" placeholder="Path to PHP" value="/usr/local/bin/php" id="phppath">
+                </div>
+              </div>
+              <div class="data-row">
+                <div class="data-item grow">
+                  <span class="data-item-desc">Database username</span>
+                  <input type="text" class="topcoat-text-input" placeholder="Database username" value="" id="dbuser">
+                </div>
+                <div class="data-item grow">
+                  <span class="data-item-desc">Database password</span>
+                  <input type="password" class="topcoat-text-input" placeholder="Database password" value="" id="dbpass">
+                </div>
+              </div>
+            </div>
+            <div class="tab-to-toggle" id="tab4">
+              <div class="data-row">
+                <div class="data-item grow">
+                  <span class="data-item-desc">Replacement repositories</span>
+                  <div id="codemirror-parent" class="code-settings"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="save-row">
+            <div class="data-item ml-auto">
+              <button class="topcoat-button" id="save_all" data-tippy-content="Save the changes">Save settings</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/codemirror/lib/codemirror.js"></script>
+    <script src="./assets/codemirror/mode/javascript/javascript.js"></script>
+    <script>
+      require('./js/translate.js');
+
+      require('./js/settings.js')
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script> 
+      window.$ = require("jquery");
+
+      require('./js/dict.js');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="user-scalable=no,initial-scale = 1.0,maximum-scale = 1.0">
+
+    <title>Authenticating</title>
+
+    <link rel="stylesheet" type="text/css" href="./assets/fonts/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/topcoat-desktop-dark.css">
+    <link rel='stylesheet' type='text/css' href='./assets/css/icomatic.css'>
+
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/custom.css">
+
+    <script type='text/javascript' src='./assets/js/icomatic.js'></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+  </head>
+  <body class="dark">
+    <div class="top-nav">
+      <ul class="topcoat-button-bar">
+        <li class="topcoat-button-bar__item dropdown-toggle">
+          <a href="#" class="topcoat-button-bar__button" data-lang="file">File</a>
+          <ul class="top-menu dropdown-menu">
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button" id="open-settings" data-lang="settings">Settings</a>
+            </li>
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button" id="exit-app" data-lang="exit">Exit</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="grow"></div>
+      <ul class="icon-button-bar">
+        <li class="topcoat-icon-button" id="minimize-window">
+          <a href="#" class='icomatic icon topcoat-icon'>minus</a>
+        </li>
+        <li class="topcoat-icon-button" id="close-window">
+          <a href="#" class='icomatic icon topcoat-icon'>cancel</a>
+        </li>
+      </ul>
+    </div>
+    <div class="main-wrapper">
+        <div class="main relative">
+          <div class="loader-container d-flex">
+            <div class="loader"></div>
+          </div>
+          <div class="auth-form">
+            <span class="small-title mb-5 text-center" data-lang="sign in">Sign in</span>
+            <input type="text" class="topcoat-text-input mb-5 nomax" data-lang="gitlab token" data-lattr="placeholder" placeholder="GitLab token" value="" id="gtltk" data-tippy-content="Grab the token from your GitLab profile settings">
+            <label class="topcoat-checkbox c-pointer mb-5">
+              <input type="checkbox" id="remember">
+              <div class="topcoat-checkbox__checkmark"></div>
+              <span data-lang="remember me">Remember me</span>
+            </label>
+            <button class="topcoat-button--cta nomax pointer" id="login" data-lang="log in">Log in</button>
+          </div>
+        </div>
+    </div>
+    <script> 
+      require('./js/translate.js');
+
+      require('./js/auth.js'); 
+    </script>
+  </body>
+</html>

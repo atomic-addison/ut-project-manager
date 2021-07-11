@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script> 
+      window.$ = jQuery = require('jquery')
+
+      require('./js/dict.js');
+
+      require('./node_modules/jquery-ui-dist/jquery-ui.js');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Topcoat</title>
+    <meta name="viewport" content="user-scalable=no,initial-scale = 1.0,maximum-scale = 1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/fonts/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/topcoat-desktop-dark.css">
+    <link rel='stylesheet' type='text/css' href='./assets/css/icomatic.css'>
+    <script type='text/javascript' src='./assets/js/icomatic.js'></script>
+
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <!--
+    <script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+        crossorigin="anonymous"></script>-->
+
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/custom.css">
+  </head>
+  <body class="dark">
+    <div class="top-nav">
+      <ul class="topcoat-button-bar">
+        <li class="topcoat-button-bar__item dropdown-toggle">
+          <a href="#" class="topcoat-button-bar__button" data-lang="file">File</a>
+          <ul class="top-menu dropdown-menu">
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button" id="open-settings" data-lang="settings">Settings</a>
+            </li>
+            <!--
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button">New</a>
+            </li>
+            <li class="topcoat-button-bar__item subdown-toggle">
+              <a href="#" class="topcoat-button-bar__button">Open <span class="icomatic icon topcoat-icon">next</span></a>
+              <ul class="top-menu dropdown-menu-sub">
+                <li class="topcoat-button-bar__item">
+                  <a href="#" class="topcoat-button-bar__button">New</a>
+                </li>
+                <li class="topcoat-button-bar__item subdown-toggle">
+                  <a href="#" class="topcoat-button-bar__button">Open <span class="icomatic icon topcoat-icon">next</span></a>
+                  <ul class="top-menu dropdown-menu-sub">
+                    <li class="topcoat-button-bar__item">
+                      <a href="#" class="topcoat-button-bar__button">New</a>
+                    </li>
+                    <li class="topcoat-button-bar__item">
+                      <a href="#" class="topcoat-button-bar__button">Open</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button" id="select-folder">Select folder...</a>
+            </li>-->
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button" id="exit-app" data-lang="exit">Exit</a>
+            </li>
+          </ul>
+        </li>
+        <li class="topcoat-button-bar__item dropdown-toggle">
+          <a href="#" class="topcoat-button-bar__button">View</a>
+          <ul class="top-menu dropdown-menu">
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button" id="viewrepos">Repositories</a>
+            </li>
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button" id="viewservers">Servers</a>
+            </li>
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button" id="viewdbs">Databases</a>
+            </li>
+          </ul>
+        </li>
+        <li class="topcoat-button-bar__item dropdown-toggle">
+          <a href="#" class="topcoat-button-bar__button">Project list</a>
+          <ul class="top-menu dropdown-menu">
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button" id="clear-cache">Clear</a>
+            </li>
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button" id="reload-cache">Reload</a>
+            </li>
+          </ul>
+        </li>
+        <li class="topcoat-button-bar__item dropdown-toggle">
+          <a href="#" class="topcoat-button-bar__button">Quick access</a>
+          <ul class="top-menu dropdown-menu">
+            <li class="topcoat-button-bar__item">
+              <a href="http://redmine.flawlessmlm.com/" class="topcoat-button-bar__button">Redmine</a>
+            </li>
+            <li class="topcoat-button-bar__item">
+              <a href="http://mp.ukrtech.info/" class="topcoat-button-bar__button">Password manager</a>
+            </li>
+            <li class="topcoat-button-bar__item">
+              <a href="https://phpma.t.zendo.cloud/" class="topcoat-button-bar__button">PHPMyAdmin</a>
+            </li>
+          </ul>
+        </li>
+        <!--
+        <li class="topcoat-button-bar__item dropdown-toggle">
+          <a href="#" class="topcoat-button-bar__button">Edit</a>
+          <ul class="top-menu dropdown-menu">
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button">New</a>
+            </li>
+            <li class="topcoat-button-bar__item subdown-toggle">
+              <a href="#" class="topcoat-button-bar__button">Open <span class="icomatic icon topcoat-icon">next</span></a>
+              <ul class="top-menu dropdown-menu-sub">
+                <li class="topcoat-button-bar__item">
+                  <a href="#" class="topcoat-button-bar__button">New</a>
+                </li>
+                <li class="topcoat-button-bar__item subdown-toggle">
+                  <a href="#" class="topcoat-button-bar__button">Open <span class="icomatic icon topcoat-icon">next</span></a>
+                  <ul class="top-menu dropdown-menu-sub">
+                    <li class="topcoat-button-bar__item">
+                      <a href="#" class="topcoat-button-bar__button">New</a>
+                    </li>
+                    <li class="topcoat-button-bar__item">
+                      <a href="#" class="topcoat-button-bar__button">Open</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="topcoat-button-bar__item dropdown-toggle">
+          <a href="#" class="topcoat-button-bar__button">Help</a>
+          <ul class="top-menu dropdown-menu">
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button">Changelog</a>
+            </li>
+            <li class="topcoat-button-bar__item">
+              <a href="#" class="topcoat-button-bar__button">About</a>
+            </li>
+          </ul>
+        </li>-->
+      </ul>
+      <div class="grow"></div>
+      <ul class="icon-button-bar">
+        <li class="topcoat-icon-button" id="minimize-window">
+          <a href="#" class='icomatic icon topcoat-icon'>minus</a>
+        </li>
+        <li class="topcoat-icon-button" id="maximize-window">
+          <a href="#" class='icomatic icon topcoat-icon'>plus</a>
+        </li>
+        <li class="topcoat-icon-button" id="close-window">
+          <a href="#" class='icomatic icon topcoat-icon'>cancel</a>
+        </li>
+      </ul>
+    </div>
+    <div class="main-wrapper">
+      <div class="main">
+        <div class="resizable_">
+          <div class="content">
+            <div class="item-list" id="mainlist"></div>
+          </div>
+        </div>
+        <div class="sidebar">
+          <span class="small-title">Actions</span>
+          <div class="button-list mb-10">
+            <button class="topcoat-button" id="editcomposer" data-tippy-content="Edit the composer before uploading">Edit</button>
+            <button class="topcoat-button" id="savecomposer" data-tippy-content="Save the composer file to your computer">Save</button>
+            <button class="topcoat-button" id="uploadcomposer" data-tippy-content="Upload the composer to a remote server">Upload</button>
+          </div>
+          <span class="small-title">Composer preview <span class="editednote">(edited)</span></span>
+          <div id="compcontainer" class="composer-box"></div>
+        </div>
+      </div>
+    </div>
+
+    <script> 
+      require('./js/translate.js');
+
+      require('./js/renderer.js'); 
+    </script>
+  </body>
+</html>

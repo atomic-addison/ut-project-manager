@@ -1,0 +1,33 @@
+{
+  "name": "utpm",
+  "version": "1.0.5",
+  "description": "A project manager of sorts",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "sly",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^9.0.2"
+  },
+  "dependencies": {
+    "@gitbeaker/node": "^17.0.3",
+    "jquery": "^3.4.1",
+    "jquery-ui-dist": "^1.12.1",
+    "json-formatter-js": "^2.2.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "node-html-parser": "^1.1.16",
+    "node-ssh": "^7.0.0",
+    "open": "^7.0.0",
+    "request": "^2.88.0",
+    "setsuna": "^1.0.4"
+  },
+  "build": {
+    "win": {
+      "icon": "./assets/img/icon.png"
+    },
+    "electronVersion": "9.0.2"
+  }
+}
